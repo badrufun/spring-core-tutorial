@@ -7,14 +7,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--defining properties file-->
+    <context:property-placeholder location="app.properties"/>
+
     <!-- This is used to configure baseball coach -->
     <!--<bean id="theCoach" class="in.advertiss.springcore.BaseBallCoach" />-->
 
     <!-- This is used to configure Track coach -->
     <bean id="fortuneService" class="in.advertiss.springcore.HappyFortuneService" />
 
-    <!--Constructor injection-->
+
     <bean id="theCoach" class="in.advertiss.springcore.TrackCoach" >
+        <!--Constructor injection-->
         <constructor-arg ref="fortuneService"/>
     </bean>
 
@@ -22,6 +26,17 @@
         <!--Setter injection-->
         <property name="fortuneService"
                   ref="fortuneService"/>
+    </bean>
+
+    <!--injecting literals and reading values from properties file-->
+    <bean id="theCoach3" class="in.advertiss.springcore.CricketCoach" >
+        <!--Setter injection-->
+        <property name="fortuneService"
+                  ref="fortuneService"/>
+        <property name="email"
+                  value="${app.email}"/>
+        <property name="team"
+                  value="Team India"/>
     </bean>
 </beans>
 

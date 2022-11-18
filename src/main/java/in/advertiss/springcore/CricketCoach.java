@@ -3,6 +3,8 @@ package in.advertiss.springcore;
 public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
+    private String email;
+    private String team;
 
     @Override
     public String getDailyWorkout() {
@@ -17,5 +19,17 @@ public class CricketCoach implements Coach {
     public void setFortuneService(FortuneService fortuneService) {
         System.out.println("Setter called!!");
         this.fortuneService = fortuneService;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public String getCoachDetails(){
+        return "Email : " + email + " Team : " + team;
     }
 }

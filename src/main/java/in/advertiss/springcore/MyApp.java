@@ -17,8 +17,14 @@ public class MyApp {
         System.out.println(theCoach.getFortune());*/
 
         //Setter injection example
-        theCoach = context.getBean("theCoach2", Coach.class);
+        /*theCoach = context.getBean("theCoach2", Coach.class);
         System.out.println(theCoach.getDailyWorkout());
-        System.out.println(theCoach.getFortune());
+        System.out.println(theCoach.getFortune());*/
+
+        //injecting literals and reading values from properties file
+        CricketCoach cricketCoach = context.getBean("theCoach3", CricketCoach.class);
+        System.out.println(cricketCoach.getDailyWorkout());
+        System.out.println(cricketCoach.getFortune());
+        System.out.println(cricketCoach.getCoachDetails());
     }
 }
