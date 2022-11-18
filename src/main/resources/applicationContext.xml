@@ -11,7 +11,11 @@
     <!--<bean id="theCoach" class="in.advertiss.springcore.BaseBallCoach" />-->
 
     <!-- This is used to configure Track coach -->
-    <bean id="theCoach" class="in.advertiss.springcore.TrackCoach" />
+    <bean id="fortuneService" class="in.advertiss.springcore.HappyFortuneService" />
+
+    <bean id="theCoach" class="in.advertiss.springcore.TrackCoach" >
+        <constructor-arg ref="fortuneService"/>
+    </bean>
 </beans>
 
 

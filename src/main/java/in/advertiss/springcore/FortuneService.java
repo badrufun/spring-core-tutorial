@@ -1,6 +1,5 @@
 package in.advertiss.springcore;
 
-public interface Coach {
-    String getDailyWorkout();
+public interface FortuneService {
     String getFortune();
 }
