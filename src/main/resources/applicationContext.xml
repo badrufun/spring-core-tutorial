@@ -13,8 +13,15 @@
     <!-- This is used to configure Track coach -->
     <bean id="fortuneService" class="in.advertiss.springcore.HappyFortuneService" />
 
+    <!--Constructor injection-->
     <bean id="theCoach" class="in.advertiss.springcore.TrackCoach" >
         <constructor-arg ref="fortuneService"/>
+    </bean>
+
+    <bean id="theCoach2" class="in.advertiss.springcore.CricketCoach" >
+        <!--Setter injection-->
+        <property name="fortuneService"
+                  ref="fortuneService"/>
     </bean>
 </beans>
 

@@ -11,7 +11,13 @@ public class MyApp {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         //based on configuration file the coach object will be created
         Coach theCoach;
-        theCoach = context.getBean("theCoach", Coach.class);
+        //Constructor injection
+        /*theCoach = context.getBean("theCoach", Coach.class);
+        System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getFortune());*/
+
+        //Setter injection example
+        theCoach = context.getBean("theCoach2", Coach.class);
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getFortune());
     }
