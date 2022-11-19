@@ -9,8 +9,8 @@ public class MyAnnotationApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationAnnotationContext.xml");
 
-        //get bean from context
-        Coach coach = context.getBean("newCoach", Coach.class);
+        //get bean from context -->> default bean id same as class name with 1st char lower case
+        Coach coach = context.getBean("baseBallCoach", Coach.class);
 
         //print bean data
         System.out.println(coach.getDailyWorkout());
