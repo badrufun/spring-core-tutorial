@@ -1,5 +1,6 @@
 package in.advertiss.springcore;
 
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApp {
@@ -10,7 +11,7 @@ public class MyApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         //based on configuration file the coach object will be created
-        Coach theCoach;
+        //Coach theCoach;
         //Constructor injection
         /*theCoach = context.getBean("theCoach", Coach.class);
         System.out.println(theCoach.getDailyWorkout());
@@ -40,13 +41,17 @@ public class MyApp {
 
         //prototype
         //getting bean theCoach3 and printing email
-        CricketCoach cricketCoach = context.getBean("theCoach4", CricketCoach.class);
+        /*CricketCoach cricketCoach = context.getBean("theCoach4", CricketCoach.class);
         System.out.println(cricketCoach.getCoachDetails());
         //changing email
         cricketCoach.setEmail("advertiss@gmail.com");
 
         //getting again bean theCoach3 and printing email
         cricketCoach = context.getBean("theCoach4", CricketCoach.class);
-        System.out.println(cricketCoach.getCoachDetails());//returning new object
+        System.out.println(cricketCoach.getCoachDetails());//returning new object*/
+
+        //lifecycle methods
+        CricketCoach cricketCoach = context.getBean("theCoach5", CricketCoach.class);
+        context.close();//shutdown container and destroy method will be called
     }
 }

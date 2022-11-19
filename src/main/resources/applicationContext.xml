@@ -41,6 +41,12 @@
         <property name="email" value="${app.email}"/>
         <property name="team" value="Team India"/>
     </bean>
+
+    <bean id="theCoach5" class="in.advertiss.springcore.CricketCoach"
+          init-method="initMethod"  destroy-method="destroyMethod">
+        <!--Setter injection-->
+        <property name="fortuneService" ref="fortuneService"/>
+    </bean>
 </beans>
 
 

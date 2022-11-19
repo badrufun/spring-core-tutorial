@@ -32,4 +32,12 @@ public class CricketCoach implements Coach {
     public String getCoachDetails(){
         return "Email : " + email + " Team : " + team;
     }
+
+    public void initMethod(){
+        System.out.println("Init-method called!");
+    }
+
+    public void destroyMethod(){
+        System.out.println("destroy-method called!");
+    }
 }
