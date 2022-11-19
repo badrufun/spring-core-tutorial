@@ -29,14 +29,11 @@
     </bean>
 
     <!--injecting literals and reading values from properties file-->
-    <bean id="theCoach3" class="in.advertiss.springcore.CricketCoach" >
+    <bean id="theCoach3" class="in.advertiss.springcore.CricketCoach" scope="singleton">
         <!--Setter injection-->
-        <property name="fortuneService"
-                  ref="fortuneService"/>
-        <property name="email"
-                  value="${app.email}"/>
-        <property name="team"
-                  value="Team India"/>
+        <property name="fortuneService" ref="fortuneService"/>
+        <property name="email" value="${app.email}"/>
+        <property name="team" value="Team India"/>
     </bean>
 </beans>
 

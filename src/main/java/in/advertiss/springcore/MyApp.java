@@ -22,9 +22,20 @@ public class MyApp {
         System.out.println(theCoach.getFortune());*/
 
         //injecting literals and reading values from properties file
-        CricketCoach cricketCoach = context.getBean("theCoach3", CricketCoach.class);
+        /*CricketCoach cricketCoach = context.getBean("theCoach3", CricketCoach.class);
         System.out.println(cricketCoach.getDailyWorkout());
         System.out.println(cricketCoach.getFortune());
+        System.out.println(cricketCoach.getCoachDetails());*/
+
+        //Scope -> default scope is singleton
+        //getting bean theCoach3 and printing email
+        CricketCoach cricketCoach = context.getBean("theCoach3", CricketCoach.class);
         System.out.println(cricketCoach.getCoachDetails());
+        //changing email
+        cricketCoach.setEmail("advertiss@gmail.com");
+
+        //getting again bean theCoach3 and printing email
+        cricketCoach = context.getBean("theCoach3", CricketCoach.class);
+        System.out.println(cricketCoach.getCoachDetails());//returning same object I made changes above
     }
 }
