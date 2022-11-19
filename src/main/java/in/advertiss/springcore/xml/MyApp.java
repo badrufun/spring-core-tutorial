@@ -1,6 +1,5 @@
-package in.advertiss.springcore;
+package in.advertiss.springcore.xml;
 
-import in.advertiss.springcore.xml.CricketCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApp {
