@@ -1,4 +1,4 @@
-package in.advertiss.springcore;
+package in.advertiss.springcore.xml;
 
 public class CricketCoach implements Coach {
 

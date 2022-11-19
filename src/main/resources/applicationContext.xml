@@ -11,38 +11,38 @@
     <context:property-placeholder location="app.properties"/>
 
     <!-- This is used to configure baseball coach -->
-    <!--<bean id="theCoach" class="in.advertiss.springcore.BaseBallCoach" />-->
+    <!--<bean id="theCoach" class="in.advertiss.springcore.xml.BaseBallCoach" />-->
 
     <!-- This is used to configure Track coach -->
-    <bean id="fortuneService" class="in.advertiss.springcore.HappyFortuneService" />
+    <bean id="fortuneService" class="in.advertiss.springcore.xml.HappyFortuneService" />
 
 
-    <bean id="theCoach" class="in.advertiss.springcore.TrackCoach" >
+    <bean id="theCoach" class="in.advertiss.springcore.xml.TrackCoach" >
         <!--Constructor injection-->
         <constructor-arg ref="fortuneService"/>
     </bean>
 
-    <bean id="theCoach2" class="in.advertiss.springcore.CricketCoach" >
+    <bean id="theCoach2" class="in.advertiss.springcore.xml.CricketCoach" >
         <!--Setter injection-->
         <property name="fortuneService" ref="fortuneService"/>
     </bean>
 
     <!--injecting literals and reading values from properties file-->
-    <bean id="theCoach3" class="in.advertiss.springcore.CricketCoach" scope="singleton">
+    <bean id="theCoach3" class="in.advertiss.springcore.xml.CricketCoach" scope="singleton">
         <!--Setter injection-->
         <property name="fortuneService" ref="fortuneService"/>
         <property name="email" value="${app.email}"/>
         <property name="team" value="Team India"/>
     </bean>
 
-    <bean id="theCoach4" class="in.advertiss.springcore.CricketCoach" scope="prototype">
+    <bean id="theCoach4" class="in.advertiss.springcore.xml.CricketCoach" scope="prototype">
         <!--Setter injection-->
         <property name="fortuneService" ref="fortuneService"/>
         <property name="email" value="${app.email}"/>
         <property name="team" value="Team India"/>
     </bean>
 
-    <bean id="theCoach5" class="in.advertiss.springcore.CricketCoach"
+    <bean id="theCoach5" class="in.advertiss.springcore.xml.CricketCoach"
           init-method="initMethod"  destroy-method="destroyMethod">
         <!--Setter injection-->
         <property name="fortuneService" ref="fortuneService"/>

@@ -1,4 +1,6 @@
-package in.advertiss.springcore;
+package in.advertiss.springcore.xml;
+
+import in.advertiss.springcore.xml.FortuneService;
 
 public class HappyFortuneService implements FortuneService {
     @Override

@@ -1,6 +1,9 @@
-package in.advertiss.springcore;
+package in.advertiss.springcore.xml;
 
-public class TrackCoach implements Coach{
+import in.advertiss.springcore.xml.Coach;
+import in.advertiss.springcore.xml.FortuneService;
+
+public class TrackCoach implements Coach {
 
     private FortuneService fortuneService;
 

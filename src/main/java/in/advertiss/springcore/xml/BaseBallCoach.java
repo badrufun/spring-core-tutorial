@@ -1,6 +1,9 @@
-package in.advertiss.springcore;
+package in.advertiss.springcore.xml;
 
-public class BaseBallCoach implements Coach{
+import in.advertiss.springcore.xml.Coach;
+import in.advertiss.springcore.xml.FortuneService;
+
+public class BaseBallCoach implements Coach {
 
     private FortuneService fortuneService;
 
