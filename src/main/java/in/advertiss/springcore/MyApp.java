@@ -29,13 +29,24 @@ public class MyApp {
 
         //Scope -> default scope is singleton
         //getting bean theCoach3 and printing email
-        CricketCoach cricketCoach = context.getBean("theCoach3", CricketCoach.class);
+        /*CricketCoach cricketCoach = context.getBean("theCoach3", CricketCoach.class);
         System.out.println(cricketCoach.getCoachDetails());
         //changing email
         cricketCoach.setEmail("advertiss@gmail.com");
 
         //getting again bean theCoach3 and printing email
         cricketCoach = context.getBean("theCoach3", CricketCoach.class);
-        System.out.println(cricketCoach.getCoachDetails());//returning same object I made changes above
+        System.out.println(cricketCoach.getCoachDetails());//returning same object I made changes above*/
+
+        //prototype
+        //getting bean theCoach3 and printing email
+        CricketCoach cricketCoach = context.getBean("theCoach4", CricketCoach.class);
+        System.out.println(cricketCoach.getCoachDetails());
+        //changing email
+        cricketCoach.setEmail("advertiss@gmail.com");
+
+        //getting again bean theCoach3 and printing email
+        cricketCoach = context.getBean("theCoach4", CricketCoach.class);
+        System.out.println(cricketCoach.getCoachDetails());//returning new object
     }
 }
