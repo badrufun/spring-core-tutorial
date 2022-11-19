@@ -15,6 +15,9 @@ public class MyAnnotationApp {
         //print bean data
         System.out.println(coach.getDailyWorkout());
 
+        //fortune print
+        System.out.println(coach.getFortune());
+
         //close context
         context.close();
     }
