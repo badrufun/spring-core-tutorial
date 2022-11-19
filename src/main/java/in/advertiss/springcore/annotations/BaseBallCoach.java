@@ -6,9 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class BaseBallCoach implements Coach {
 
+    //Feild injection --> internally done using java reflection
+    @Autowired
     private FortuneService fortuneService;
 
-    /*@Autowired
+    //Auto-injection using constructor happening
+   /* @Autowired
     public BaseBallCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
         System.out.println("Constructor is called for fortune service injection!!");
@@ -23,9 +26,12 @@ public class BaseBallCoach implements Coach {
         return fortuneService.getFortune();
     }
 
-    @Autowired
+    //Auto-injection happening using setter
+    //if Auto constructor is also there, then first it will be injected by constructor then by setter
+    //Setter injection will override the constructor injection
+   /* @Autowired
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
         System.out.println("Setter is called for fortune service injection!!");
-    }
+    }*/
 }
