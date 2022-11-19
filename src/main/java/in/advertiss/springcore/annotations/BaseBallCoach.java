@@ -8,11 +8,11 @@ public class BaseBallCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    @Autowired
+    /*@Autowired
     public BaseBallCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
         System.out.println("Constructor is called for fortune service injection!!");
-    }
+    }*/
 
     public String getDailyWorkout(){
         return "Practice 30 mins daily!";
@@ -23,9 +23,9 @@ public class BaseBallCoach implements Coach {
         return fortuneService.getFortune();
     }
 
-    /*@Autowired
+    @Autowired
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
         System.out.println("Setter is called for fortune service injection!!");
-    }*/
+    }
 }
