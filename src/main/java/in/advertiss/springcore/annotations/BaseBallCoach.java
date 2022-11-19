@@ -1,6 +1,7 @@
 package in.advertiss.springcore.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,6 +9,7 @@ public class BaseBallCoach implements Coach {
 
     //Feild injection --> internally done using java reflection
     @Autowired
+    @Qualifier("goodFortuneService")
     private FortuneService fortuneService;
 
     //Auto-injection using constructor happening
