@@ -17,15 +17,27 @@ public class MyAnnotationApp {
 
         //fortune print
         System.out.println(coach.getFortune());
-
-        //close context
-        context.close();*/
+        */
 
 
         ///singleton and prototype
         Coach coach = context.getBean("baseBallCoach", Coach.class);
         Coach coach2 = context.getBean("baseBallCoach", Coach.class);
 
-        System.out.println("Comparing with == sign::" + (coach == coach2));//true means same object b'coz its singleton
+        System.out.println("Comparing with == sign::" + (coach == coach2));
+        //false means different objects
+        // b'coz its prototype
+
+
+
+
+
+
+
+
+
+
+        //close context
+        context.close();
     }
 }
