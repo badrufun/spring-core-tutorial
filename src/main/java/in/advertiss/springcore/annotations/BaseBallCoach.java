@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
+@Scope("singleton")
 public class BaseBallCoach implements Coach {
 
     //Feild injection --> internally done using java reflection
@@ -40,5 +43,14 @@ public class BaseBallCoach implements Coach {
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
         System.out.println("Setter is called for fortune service injection!!");
+    }
+
+    @PostConstruct
+    public void initMethod(){
+        System.out.println("Init method called in base ball class");
+    }
+    @PreDestroy
+    public void destroyMethod(){
+        System.out.println("Destroy method called in base ball class");
     }
 }
