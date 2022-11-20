@@ -9,4 +9,9 @@ public class Circle implements Shape {
     public String draw() {
         return "Drawing circle!!";
     }
+
+    @Override
+    public String calculateArea() {
+        return "Circle area calculated";
+    }
 }

@@ -1,8 +1,6 @@
 package in.advertiss.springcore.java_config;
 
-import in.advertiss.springcore.annotations.Coach;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class JavaConfigDemoApp {
     public static void main(String[] args){
@@ -10,9 +8,13 @@ public class JavaConfigDemoApp {
         //create context using config file
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
-        Shape shape = context.getBean("circle", Shape.class);
 
+        /*Shape shape = context.getBean("circle", Shape.class);
+        System.out.println(shape.draw());*/
+
+        Shape shape = context.getBean("triangle", Shape.class);
         System.out.println(shape.draw());
+        System.out.println(shape.calculateArea());
 
         //close context
         context.close();
