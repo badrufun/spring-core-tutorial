@@ -9,7 +9,7 @@ public class MyAnnotationApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationAnnotationContext.xml");
 
-        //get bean from context -->> default bean id same as class name with 1st char lower case
+       /* //get bean from context -->> default bean id same as class name with 1st char lower case
         Coach coach = context.getBean("baseBallCoach", Coach.class);
 
         //print bean data
@@ -19,6 +19,13 @@ public class MyAnnotationApp {
         System.out.println(coach.getFortune());
 
         //close context
-        context.close();
+        context.close();*/
+
+
+        ///singleton and prototype
+        Coach coach = context.getBean("baseBallCoach", Coach.class);
+        Coach coach2 = context.getBean("baseBallCoach", Coach.class);
+
+        System.out.println("Comparing with == sign::" + (coach == coach2));//true means same object b'coz its singleton
     }
 }
